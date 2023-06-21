@@ -26,10 +26,14 @@ const authSlice = createSlice({
     resetRegistrationStatus(state) {
       state.registrationSuccess = false;
     },
+    logout(state) {
+      state.isAuthenticated = false;
+      state.token = null;
+    },
   },
 });
 
-export const { loginSuccess, registerSuccess, resetRegistrationStatus } =
+export const { loginSuccess, registerSuccess, resetRegistrationStatus, logout } =
   authSlice.actions;
 
 export default authSlice;
