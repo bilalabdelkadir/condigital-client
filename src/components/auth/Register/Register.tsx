@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from "react";
+import { registerUser } from "../../../utils/api";
 import { LockOutlined, UserOutlined, MailOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import Styles from "./Register.module.css";
+import { useNavigate } from "react-router-dom";
 
-const Register: React.FunctionComponent = () => {
+const Register = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     forceUpdate({});
   }, []);
 
-  const onFinish = (values: any) => {
-    console.log("Finish:", values);
+  const onFinish = async (values: any) => {
+    try {
+      const { firstName, lastName, email, password } = values;
+
+      const response = await registerUser(firstName, lastName, email, password);
+
+      if (response.status === 201) {
+        alert("User created successfully");
+        navigate("/login");
+      }
+    } catch (error) {
+      alert(error);
+    } finally {
+      form.resetFields();
+    }
   };
 
   return (
