@@ -13,6 +13,7 @@
 .form-container .ant-form-item:last-child {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -32,11 +33,11 @@
 }
 
 .btn-class {
-  margin: 0 auto;
+  margin: 1rem 0 auto auto;
   padding: 0 1rem;
 }
 
 .btn-class.ant-btn[disabled] {
   background-color: #ddd; /* Update with desired color */
-  color: #999; /* Update with desired color */
+  color: #00b436; /* Update with desired color */
 }
