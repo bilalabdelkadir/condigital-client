@@ -1,8 +1,10 @@
+import Login from "./components/auth/Login/Login";
+
 function App() {
   return (
     <>
       <div>
-        <h1>Wellcome</h1>
+        <Login />
       </div>
     </>
   );
