@@ -4,6 +4,8 @@ import Home from "./components/Home/Home";
 import Register from "./components/auth/Register/Register";
 import { useSelector } from "react-redux";
 import Hey from "./components/Hey";
+import CreateAccount from "./components/account/CreateAccount";
+import Account from "./pages/Account";
 
 function App() {
   const isAuthenticated = useSelector(
@@ -15,17 +17,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/hey"  
-        element={
-          isAuthenticated ? <Hey /> : <Login />
-        }
+        <Route path="/hey" element={isAuthenticated ? <Hey /> : <Login />} />
+
+        <Route
+          path="/account"
+          element={isAuthenticated ? <Account /> : <Login />}
         />
-        
-       
       </Routes>
     </>
   );
 }
 
 export default App;
-

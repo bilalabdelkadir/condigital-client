@@ -37,6 +37,6 @@
 }
 
 .btn-class.ant-btn[disabled] {
-  background-color: #ddd; /* Update with desired color */
-  color: #999; /* Update with desired color */
+  background-color: #ddd;
+  color: #999; 
 }

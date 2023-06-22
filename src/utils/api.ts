@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { signupUser, loginUser, logoutUser } from "./config";
+import { signupUser, loginUser, logoutUser, getAllAccount } from "./config";
 
 const registerUser = async (
   firstName: string,
@@ -29,4 +29,7 @@ const logoutUserRequest = async (): Promise<AxiosResponse> => {
   return await axios.post(logoutUser);
 };
 
-export { registerUser, loginUserRequest, logoutUserRequest };
+const fetchData = async () => {
+  return await axios.get(getAllAccount);
+};
+export { registerUser, loginUserRequest, logoutUserRequest, fetchData };

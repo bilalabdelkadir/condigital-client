@@ -1,7 +1,7 @@
 .form-container {
   border: 1px solid #ccc;
-  padding: 36px 16px;
-  max-width: 50%;
+  padding: 16px 16px;
+  max-width: 30%;
   margin-left: auto;
   margin-right: auto;
   max-height: 80vh;
@@ -38,6 +38,5 @@
 }
 
 .btn-class.ant-btn[disabled] {
-  background-color: #ddd; /* Update with desired color */
-  color: #00b436; /* Update with desired color */
-}
+  background-color: #ddd; 
+  color: #00b436;}

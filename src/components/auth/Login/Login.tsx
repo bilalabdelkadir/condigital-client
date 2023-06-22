@@ -5,11 +5,13 @@ import Styles from "./Login.module.css";
 import { useDispatch } from "react-redux";
 import { loginUserRequest } from "../../../utils/api";
 import { loginSuccess } from "../../../reducers/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     forceUpdate({});
@@ -21,7 +23,7 @@ const Login = () => {
       if (response.status === 200) {
         const token = response.data.token;
         dispatch(loginSuccess(token));
-        // Redirect or perform any other action upon successful login
+        navigate("/account");
       }
     } catch (error) {
       alert(error);
